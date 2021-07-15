@@ -92,6 +92,7 @@ class RoomPage extends StatelessWidget {
               ),
             ),
             _speakerSection(room.speakers),
+            _followedBySpeakerSection(context, room.followedBySpeakers)
           ],
         ),
       ),
@@ -111,6 +112,44 @@ class RoomPage extends StatelessWidget {
                     isMuted: Random().nextBool(),
                   ))
               .toList(),
+        ),
+      );
+
+  Widget _followedBySpeakerSection(
+    BuildContext context,
+    List<UserEntity> users,
+  ) =>
+      SliverToBoxAdapter(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Followed by speaker',
+                style: Theme.of(context).textTheme.subtitle2?.copyWith(
+                      color: Colors.grey[400],
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              GridView.count(
+                shrinkWrap: true,
+                physics: const ClampingScrollPhysics(),
+                childAspectRatio: 0.7,
+                crossAxisCount: 4,
+                children: users
+                    .map((user) => RoomSpeakerProfile(
+                          speaker: user,
+                          size: 66,
+                          isNew: Random().nextBool(),
+                        ))
+                    .toList(),
+              ),
+            ],
+          ),
         ),
       );
 }
