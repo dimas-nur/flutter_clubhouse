@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_clubhouse/config/app_theme.dart';
-import 'package:flutter_clubhouse/presetation/widgets/upcoming_room.dart';
+import '../../config/app_theme.dart';
+import '../widgets/upcoming_room.dart';
 
 import '../../data/data_providers/dummy_data.dart';
 import '../widgets/widget.dart';
@@ -45,9 +45,12 @@ class HomePage extends StatelessWidget {
           ListView(
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 120),
             children: [
-              UpcommingRoom(upcommingRooms: DummyData.getUpcomingRoomsList())
+              UpcommingRoom(upcommingRooms: DummyData.getUpcomingRoomsList()),
+              const SizedBox(height: 12),
+              ...DummyData.getRoomsList()
+                  .map((roomEntity) => RoomCard(roomEntity: roomEntity))
             ],
-          )
+          ),
         ],
       ),
     );
