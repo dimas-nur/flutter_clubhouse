@@ -1,10 +1,12 @@
-import 'dart:ffi';
+import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_clubhouse/data/data_providers/dummy_data.dart';
-import 'package:flutter_clubhouse/data/entities/room_entity.dart';
-import 'package:flutter_clubhouse/presetation/widgets/widget.dart';
+import 'package:flutter_clubhouse/data/entities/entity.dart';
+
+import '../../data/data_providers/dummy_data.dart';
+import '../../data/entities/room_entity.dart';
+import '../widgets/widget.dart';
 
 class RoomPage extends StatelessWidget {
   final RoomEntity room;
@@ -88,10 +90,27 @@ class RoomPage extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
+            _speakerSection(room.speakers),
           ],
         ),
       ),
     );
   }
+
+  Widget _speakerSection(List<UserEntity> speakers) => SliverPadding(
+        padding: const EdgeInsets.all(20),
+        sliver: SliverGrid.count(
+          crossAxisCount: 3,
+          mainAxisSpacing: 20,
+          children: speakers
+              .map((speaker) => RoomSpeakerProfile(
+                    speaker: speaker,
+                    size: 66,
+                    isNew: Random().nextBool(),
+                    isMuted: Random().nextBool(),
+                  ))
+              .toList(),
+        ),
+      );
 }
