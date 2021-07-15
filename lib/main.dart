@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clubhouse/config/app_theme.dart';
+import 'package:flutter_clubhouse/presetation/pages/home_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: AppTheme.of(context),
       debugShowCheckedModeBanner: false,
-      home: const Scaffold(),
+      home: const HomePage(),
     );
   }
 }
