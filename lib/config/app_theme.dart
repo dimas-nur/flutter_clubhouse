@@ -12,7 +12,10 @@ class AppTheme {
     final theme = Theme.of(context);
 
     return theme.copyWith(
-      appBarTheme: const AppBarTheme(backgroundColor: AppColor.background),
+      appBarTheme: const AppBarTheme(
+        backgroundColor: AppColor.background,
+        iconTheme: IconThemeData(color: Colors.black),
+      ),
       scaffoldBackgroundColor: AppColor.background,
       primaryColor: Colors.white,
       accentColor: AppColor.green,
