@@ -30,11 +30,14 @@ class HomePage extends StatelessWidget {
             onPressed: () {},
             icon: const Icon(CupertinoIcons.bell, size: 28),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(8.0, 10.0, 20.0, 10.0),
-            child: UserProfileImage(
-              imageUrl: DummyData.getCurrentUser().imageUrl,
-              size: 36,
+          GestureDetector(
+            onTap: () {},
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(8.0, 10.0, 20.0, 10.0),
+              child: UserProfileImage(
+                imageUrl: DummyData.getCurrentUser().imageUrl,
+                size: 36,
+              ),
             ),
           ),
         ],
