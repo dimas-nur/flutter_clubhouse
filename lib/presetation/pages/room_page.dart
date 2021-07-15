@@ -94,6 +94,80 @@ class RoomPage extends StatelessWidget {
             _speakerSection(room.speakers),
             _followedBySpeakerSection(context, room.followedBySpeakers),
             _othersInRoom(context, room.others),
+            const SliverPadding(
+              padding: EdgeInsets.only(top: 70),
+            ),
+          ],
+        ),
+      ),
+      bottomSheet: Container(
+        height: 80,
+        padding: const EdgeInsets.symmetric(
+          vertical: 12,
+          horizontal: 20,
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            InkWell(
+              onTap: () => Navigator.of(context).pop(),
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 8,
+                  horizontal: 16,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.circular(24),
+                ),
+                child: const Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: '✌🏾 ',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      TextSpan(
+                        text: 'Leave quietly',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.red,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Row(
+              children: [
+                InkWell(
+                  child: Container(
+                    padding: const EdgeInsets.all(6),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.grey[300],
+                    ),
+                    child: const Icon(CupertinoIcons.add, size: 30),
+                  ),
+                ),
+                const SizedBox(
+                  width: 16,
+                ),
+                InkWell(
+                  child: Container(
+                    padding: const EdgeInsets.all(6),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.grey[300],
+                    ),
+                    child: const Icon(CupertinoIcons.hand_raised, size: 30),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
