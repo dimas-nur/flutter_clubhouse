@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_clubhouse/config/app_theme.dart';
-import 'package:flutter_clubhouse/presetation/pages/home_page.dart';
+import 'config/app_theme.dart';
+import 'presetation/pages/home_page.dart';
 
 void main() {
   runApp(MyApp());

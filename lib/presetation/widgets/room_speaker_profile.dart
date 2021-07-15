@@ -2,8 +2,8 @@ import 'dart:ffi';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_clubhouse/data/entities/user_entity.dart';
-import 'package:flutter_clubhouse/presetation/widgets/widget.dart';
+import '../../data/entities/user_entity.dart';
+import 'widget.dart';
 
 class RoomSpeakerProfile extends StatelessWidget {
   final UserEntity speaker;

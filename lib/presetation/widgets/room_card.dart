@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_clubhouse/presetation/pages/room_page.dart';
+import '../pages/room_page.dart';
 
 import '../../data/entities/entity.dart';
 import 'widget.dart';
